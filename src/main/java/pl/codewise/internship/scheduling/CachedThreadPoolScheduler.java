@@ -23,7 +23,7 @@ public class CachedThreadPoolScheduler implements Scheduler {
         TimerId taskId = timerIdSupplier.nextId();
         Future task = executorService.submit(() -> {
             try {
-                Thread.sleep(expirationTime);
+                Thread.sleep(expirationTime * 1000);
             } catch(InterruptedException ex) {
                 return;
             }
